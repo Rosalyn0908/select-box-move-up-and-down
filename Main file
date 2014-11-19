@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      button {
+        border:1px solid pink;
+        width: 50px;
+        padding:5px 5px 5px 5px;
+        border-radius:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $('#up').click(moveUpItem);
+        $('#down').click(moveDownItem);
+     });
+    
+      function moveUpItem() {
+        $('#list option:selected').each(function () {
+            $(this).insertBefore($(this).prev());
+        });
+     }
+    
+      function moveDownItem() {
+        $('#list option:selected').each(function () {
+            $(this).insertAfter($(this).next());
+        });
+     }
+    </script>
+    
+<p>put a stack of boxes with the ability to move the box anywhere in order</p>
+<select id="list" multiple="5">
+    <option value="Herpy Derp">Herpy Derp</option>
+    <option value="Drunk Unicorn">Drunk Unicorn</option>
+    <option value="Jesus Tears">Jesus Tears</option>
+    <option value="Fart in Mouth">Fart in Mouth</option>
+</select>
+
+<button id="up">UP</button>
+<button id="down">DOWN</button>
+
+  </body>
+</html>
